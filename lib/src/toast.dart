@@ -41,6 +41,9 @@ class BotToast {
     defaultKey: [],
   };
 
+  static BackButtonBehavior defaultBackButtonBehavior =
+      BackButtonBehavior.ignore;
+
   ///显示简单的通知Toast
   ///
   ///[title] 标题
@@ -802,6 +805,7 @@ class BotToast {
       BotToastNavigatorObserver.register(observerProxy);
     }
 
+    backButtonBehavior ??= BotToast.defaultBackButtonBehavior;
     //拦截点击返回事件
     VoidCallback? unRegisterFunc;
     if (backButtonBehavior == BackButtonBehavior.ignore) {
