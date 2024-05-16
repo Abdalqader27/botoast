@@ -89,38 +89,46 @@ class _LoadingState extends State<Loading> {
                   },
                 ),
               ),
-              const Center(child: Text('BackButtonBehavior'),),
+              const Center(
+                child: Text('BackButtonBehavior'),
+              ),
               Row(
                 children: <Widget>[
                   Expanded(
-                    child: RadioListTile(value: BackButtonBehavior.none,
+                    child: RadioListTile(
+                      value: BackButtonBehavior.none,
                       groupValue: backButtonBehavior,
                       onChanged: (value) {
                         setState(() {
-                          backButtonBehavior = value;
+                          backButtonBehavior = value!;
                         });
                       },
-                      title: const Text('none'),),
+                      title: const Text('none'),
+                    ),
                   ),
                   Expanded(
-                    child: RadioListTile(value: BackButtonBehavior.ignore,
+                    child: RadioListTile(
+                      value: BackButtonBehavior.ignore,
                       groupValue: backButtonBehavior,
                       onChanged: (value) {
                         setState(() {
-                          backButtonBehavior = value;
+                          backButtonBehavior = value!;
                         });
                       },
-                      title: const Text('ignore'),),
+                      title: const Text('ignore'),
+                    ),
                   ),
                   Expanded(
-                    child: RadioListTile(value: BackButtonBehavior.close,
+                    child: RadioListTile(
+                      value: BackButtonBehavior.close,
                       groupValue: backButtonBehavior,
-                      onChanged: (value) {
+                      onChanged: (BackButtonBehavior? value) {
                         setState(() {
-                          backButtonBehavior = value;
+                          backButtonBehavior = value!;
                         });
                       },
-                      title: const Text('close'),),
+                      title: const Text('close'),
+                    ),
                   )
                 ],
               ),
@@ -174,7 +182,6 @@ class _LoadingState extends State<Loading> {
                   },
                 ),
               ),
-
             ],
           ),
         ),
@@ -182,4 +189,3 @@ class _LoadingState extends State<Loading> {
     );
   }
 }
-

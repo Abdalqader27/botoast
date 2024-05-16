@@ -66,8 +66,7 @@ class _CustomTextState extends State<CustomText> {
                                       duration: Duration(seconds: seconds));
                                 }),
                             const Padding(
-                              padding:
-                                  EdgeInsets.symmetric(horizontal: 8),
+                              padding: EdgeInsets.symmetric(horizontal: 8),
                               child: Text("Text one"),
                             ),
                           ],
@@ -120,38 +119,44 @@ class _CustomTextState extends State<CustomText> {
                   },
                 ),
               ),
-              const Center(child: Text('BackButtonBehavior'),),
+              const Center(
+                child: Text('BackButtonBehavior'),
+              ),
               Row(
                 children: <Widget>[
                   Expanded(
-                    child: RadioListTile(value: BackButtonBehavior.none,
+                    child: RadioListTile(
+                      value: BackButtonBehavior.none,
                       groupValue: backButtonBehavior,
-                      onChanged: (value) {
+                      onChanged: (BackButtonBehavior? value) {
                         setState(() {
-                          backButtonBehavior = value;
+                          backButtonBehavior = value!;
                         });
                       },
-                      title: const Text('none'),),
+                      title: const Text('none'),
+                    ),
                   ),
                   Expanded(
-                    child: RadioListTile(value: BackButtonBehavior.ignore,
+                    child: RadioListTile(
+                      value: BackButtonBehavior.ignore,
                       groupValue: backButtonBehavior,
-                      onChanged: (value) {
-                        setState(() {
-                          backButtonBehavior = value;
-                        });
-                      },
-                      title: const Text('ignore'),),
+                      onChanged: (BackButtonBehavior? value) => setState(() {
+                        backButtonBehavior = value!;
+                      }),
+                      title: const Text('ignore'),
+                    ),
                   ),
                   Expanded(
-                    child: RadioListTile(value: BackButtonBehavior.close,
+                    child: RadioListTile(
+                      value: BackButtonBehavior.close,
                       groupValue: backButtonBehavior,
-                      onChanged: (value) {
+                      onChanged: (BackButtonBehavior? value) {
                         setState(() {
-                          backButtonBehavior = value;
+                          backButtonBehavior = value!;
                         });
                       },
-                      title: const Text('close'),),
+                      title: const Text('close'),
+                    ),
                   )
                 ],
               ),
@@ -191,8 +196,6 @@ class _CustomTextState extends State<CustomText> {
                 },
                 title: const Text("ignoreContentClick: "),
               ),
-
-
               ListTile(
                 title: Row(
                   mainAxisSize: MainAxisSize.min,

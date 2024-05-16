@@ -124,9 +124,9 @@ class _SimpleNotificationState extends State<SimpleNotification> {
                     child: RadioListTile(
                       value: BackButtonBehavior.none,
                       groupValue: backButtonBehavior,
-                      onChanged: (value) {
+                      onChanged: (BackButtonBehavior? value) {
                         setState(() {
-                          backButtonBehavior = value;
+                          backButtonBehavior = value!;
                         });
                       },
                       title: const Text('none'),
@@ -136,9 +136,9 @@ class _SimpleNotificationState extends State<SimpleNotification> {
                     child: RadioListTile(
                       value: BackButtonBehavior.ignore,
                       groupValue: backButtonBehavior,
-                      onChanged: (value) {
+                      onChanged: (BackButtonBehavior? value) {
                         setState(() {
-                          backButtonBehavior = value;
+                          backButtonBehavior = value!;
                         });
                       },
                       title: const Text('ignore'),
@@ -148,9 +148,9 @@ class _SimpleNotificationState extends State<SimpleNotification> {
                     child: RadioListTile(
                       value: BackButtonBehavior.close,
                       groupValue: backButtonBehavior,
-                      onChanged: (value) {
+                      onChanged: (BackButtonBehavior? value) {
                         setState(() {
-                          backButtonBehavior = value;
+                          backButtonBehavior = value!;
                         });
                       },
                       title: const Text('close'),
@@ -159,7 +159,7 @@ class _SimpleNotificationState extends State<SimpleNotification> {
                 ],
               ),
               ListTile(
-                title: Text("duration:   ${seconds}s"),
+                title: Text('duration:   ${seconds}s'),
                 trailing: CupertinoSlider(
                   min: 1,
                   max: 20,

@@ -21,7 +21,7 @@ class _NotificationState extends State<Notification> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Notification"),
+        title: const Text('Notification'),
       ),
       body: Container(
         padding: const EdgeInsets.only(top: 20),
@@ -35,11 +35,12 @@ class _NotificationState extends State<Notification> {
                       leading: (cancel) => SizedBox.fromSize(
                           size: const Size(40, 40),
                           child: IconButton(
-                            icon: const Icon(Icons.favorite, color: Colors.redAccent),
+                            icon: const Icon(Icons.favorite,
+                                color: Colors.redAccent),
                             onPressed: cancel,
                           )),
                       title: (_) => const Text('Notification title'),
-                      subtitle: (_) => const Text("Notification subtitle"),
+                      subtitle: (_) => const Text('Notification subtitle'),
                       trailing: (cancel) => IconButton(
                             icon: const Icon(Icons.cancel),
                             onPressed: cancel,
@@ -61,7 +62,7 @@ class _NotificationState extends State<Notification> {
                           Duration(milliseconds: animationReverseMilliseconds),
                       duration: Duration(seconds: seconds));
                 },
-                child: const Text("notification"),
+                child: const Text('notification'),
               ),
               SwitchListTile(
                 value: enableSlideOff,
@@ -70,7 +71,7 @@ class _NotificationState extends State<Notification> {
                     enableSlideOff = value;
                   });
                 },
-                title: const Text("enableSlideOff: "),
+                title: const Text('enableSlideOff: '),
               ),
               SwitchListTile(
                 value: onlyOne,
@@ -79,7 +80,7 @@ class _NotificationState extends State<Notification> {
                     onlyOne = value;
                   });
                 },
-                title: const Text("onlyOne: "),
+                title: const Text('onlyOne: '),
               ),
               SwitchListTile(
                 value: crossPage,
@@ -88,45 +89,53 @@ class _NotificationState extends State<Notification> {
                     crossPage = value;
                   });
                 },
-                title: const Text("crossPage: "),
+                title: const Text('crossPage: '),
               ),
-              const Center(child: Text('BackButtonBehavior'),),
+              const Center(
+                child: Text('BackButtonBehavior'),
+              ),
               Row(
                 children: <Widget>[
                   Expanded(
-                    child: RadioListTile(value: BackButtonBehavior.none,
+                    child: RadioListTile(
+                      value: BackButtonBehavior.none,
                       groupValue: backButtonBehavior,
                       onChanged: (value) {
                         setState(() {
-                          backButtonBehavior = value;
+                          backButtonBehavior = value!;
                         });
                       },
-                      title: const Text('none'),),
+                      title: const Text('none'),
+                    ),
                   ),
                   Expanded(
-                    child: RadioListTile(value: BackButtonBehavior.ignore,
+                    child: RadioListTile(
+                      value: BackButtonBehavior.ignore,
                       groupValue: backButtonBehavior,
                       onChanged: (value) {
                         setState(() {
-                          backButtonBehavior = value;
+                          backButtonBehavior = value!;
                         });
                       },
-                      title: const Text('ignore'),),
+                      title: const Text('ignore'),
+                    ),
                   ),
                   Expanded(
-                    child: RadioListTile(value: BackButtonBehavior.close,
+                    child: RadioListTile(
+                      value: BackButtonBehavior.close,
                       groupValue: backButtonBehavior,
                       onChanged: (value) {
                         setState(() {
-                          backButtonBehavior = value;
+                          backButtonBehavior = value!;
                         });
                       },
-                      title: const Text('close'),),
+                      title: const Text('close'),
+                    ),
                   )
                 ],
               ),
               ListTile(
-                title: Text("duration:   ${seconds}s"),
+                title: Text('duration:   ${seconds}s'),
                 trailing: CupertinoSlider(
                   min: 1,
                   max: 20,
@@ -139,7 +148,7 @@ class _NotificationState extends State<Notification> {
                 ),
               ),
               ListTile(
-                title: Text("animationDuration:   ${animationMilliseconds}ms"),
+                title: Text('animationDuration:   ${animationMilliseconds}ms'),
                 trailing: CupertinoSlider(
                   min: 100,
                   max: 1000,
@@ -154,7 +163,7 @@ class _NotificationState extends State<Notification> {
               ),
               ListTile(
                 title: Text(
-                    "animationReverseDuration:   ${animationReverseMilliseconds}ms"),
+                    'animationReverseDuration:   ${animationReverseMilliseconds}ms'),
                 trailing: CupertinoSlider(
                   min: 100,
                   max: 1000,
@@ -168,7 +177,7 @@ class _NotificationState extends State<Notification> {
                 ),
               ),
               ListTile(
-                title: Text("contentPadding:   $contentPadding"),
+                title: Text('contentPadding:   $contentPadding'),
                 trailing: CupertinoSlider(
                   min: 1,
                   max: 30,
@@ -187,5 +196,3 @@ class _NotificationState extends State<Notification> {
     );
   }
 }
-
-

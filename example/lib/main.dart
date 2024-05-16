@@ -24,8 +24,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          primary: Colors.grey[300],
-          onPrimary: Colors.black,
+          foregroundColor: Colors.black,
+          backgroundColor: Colors.grey[300],
         ),
       )),
       builder: BotToastInit(),
